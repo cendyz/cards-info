@@ -1,0 +1,63 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100dvh;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --red: hsl(0, 100%, 66%);
+  --linear-gradient: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--off-white);
+  background-color: #333;
+  font-family: "Poppins", sans-serif;
+}/*# sourceMappingURL=main.css.map */
