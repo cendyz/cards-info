@@ -12,11 +12,171 @@
 body {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	background-color: #333;
-	font-family: "Zen Maru Gothic", serif;
+	align-items: flex-start;
+	background-color: var(--white);
+	font-family: "Space Grotesk", sans-serif;
 }
 
+.header {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 57vw;
+	max-height: 20.484em;
+	background-image: url("../../src/images/bg-main-mobile.png");
+	background-size: cover;
+}
+
+.main {
+	width: 100%;
+	height: 100%;
+	max-width: 576px;
+
+	&__content {
+		padding: 1em;
+		width: 100%;
+
+		&-cards {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 38%;
+
+			&-one,
+			&-two {
+				display: flex;
+				width: 80%;
+				border-radius: 0.3em;
+			}
+
+			&-one {
+				padding: 5%;
+				position: absolute;
+				top: 56.5%;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 40vw;
+				max-height: 14.375em;
+				background-image: url("../../src/images/bg-card-front.png");
+				background-size: cover;
+
+				&-logo {
+					width: 20%;
+				}
+
+				&-texts {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					color: var(--white);
+
+					&-numbers {
+						width: 100%;
+						margin-bottom: 0.7em;
+						font-size: clamp(1.13rem, calc(1.13rem + ((30.15 - 11.3) * ((100vw - 250px) / (575 - 250)))), 3.15rem);
+						letter-spacing: 1px;
+					}
+
+					&-name,
+					&-date {
+						text-transform: uppercase;
+						font-size: clamp(0.7rem, calc(0.7rem + ((15 - 7) * ((100vw - 250px) / (575 - 250)))), 1.5rem);
+						color: var(--light-grayish-violet);
+					}
+				}
+			}
+
+			&-two {
+				position: relative;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				align-self: flex-end;
+
+				&-img {
+					width: 100%;
+				}
+
+				&-number {
+					padding-bottom: 0.4em;
+					position: absolute;
+					top: 50%;
+					right: 13%;
+					transform: translateY(-50%);
+					font-size: clamp(0.6rem, calc(0.6rem + ((12 - 6) * ((100vw - 250px) / (575 - 250)))), 1.2rem);
+					color: var(--white);
+					letter-spacing: 1px;
+				}
+			}
+		}
+
+		&-form {
+			&-label {
+				margin-bottom: 0.4em;
+				display: block;
+				font-size: clamp(0.91rem, calc(0.9rem + ((20 - 9.1) * ((100vw - 250px) / (575 - 250)))), 2rem);
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+			&-input {
+				margin-bottom: 1em;
+				padding: 0.5em 0.8em;
+				width: 100%;
+				border: 1px solid var(--light-grayish-violet);
+				border-radius: 0.3em;
+				font-size: clamp(1.3rem, calc(1.3rem + ((31 - 13) * ((100vw - 250px) / (575 - 250)))), 3.1rem);
+
+				&::placeholder {
+					color: var(--dark-grayish-violet);
+				}
+
+				&:focus {
+					outline: none;
+					border: 1px solid black;
+				}
+
+				&-inputs {
+					display: flex;
+					column-gap: 0.5em;
+
+					&-box {
+						&--one {
+							width: 25%;
+						}
+						&--two {
+							width: 25%;
+						}
+						&--three {
+							width: 50%;
+						}
+
+						input {
+							margin-bottom: 0.2em;
+						}
+
+						&-error {
+							visibility: hidden;
+							font-size: clamp(0.7rem, calc(0.7rem + ((18 - 7) * ((100vw - 250px) / (575 - 250)))), 1.8rem);
+							color: var(--red);
+						}
+					}
+				}
+			}
+
+			&-btn {
+				margin-top: 0.5em;
+				background-color: var(--very-dark-violet);
+				color: var(--white);
+				width: 100%;
+				padding: 0.7em 0;
+				border-radius: 0.5em;
+				font-size: clamp(1.3rem, calc(1.3rem + ((28 - 13) * ((100vw - 250px) / (575 - 250)))), 2.8rem);
+			}
+		}
+	}
+}
 
 // - Family: [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
 // - Weights: 500

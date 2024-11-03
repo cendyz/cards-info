@@ -50,14 +50,156 @@ table {
 :root {
   --white: hsl(0, 0%, 100%);
   --red: hsl(0, 100%, 66%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
   --linear-gradient: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
 }
 
 body {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  background-color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 57vw;
+  max-height: 20.484em;
+  background-image: url("../../src/images/bg-main-mobile.png");
+  background-size: cover;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  max-width: 576px;
+}
+.main__content {
+  padding: 1em;
+  width: 100%;
+}
+.main__content-cards {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 38%;
+}
+.main__content-cards-one, .main__content-cards-two {
+  display: flex;
+  width: 80%;
+  border-radius: 0.3em;
+}
+.main__content-cards-one {
+  padding: 5%;
+  position: absolute;
+  top: 56.5%;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40vw;
+  max-height: 14.375em;
+  background-image: url("../../src/images/bg-card-front.png");
+  background-size: cover;
+}
+.main__content-cards-one-logo {
+  width: 20%;
+}
+.main__content-cards-one-texts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: var(--white);
+}
+.main__content-cards-one-texts-numbers {
+  width: 100%;
+  margin-bottom: 0.7em;
+  font-size: clamp(1.13rem, 1.13rem + 18.85 * (100vw - 250px) / 325, 3.15rem);
+  letter-spacing: 1px;
+}
+.main__content-cards-one-texts-name, .main__content-cards-one-texts-date {
+  text-transform: uppercase;
+  font-size: clamp(0.7rem, 0.7rem + 8 * (100vw - 250px) / 325, 1.5rem);
+  color: var(--light-grayish-violet);
+}
+.main__content-cards-two {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  background-color: var(--off-white);
-  background-color: #333;
-  font-family: "Poppins", sans-serif;
+  align-self: flex-end;
+}
+.main__content-cards-two-img {
+  width: 100%;
+}
+.main__content-cards-two-number {
+  padding-bottom: 0.4em;
+  position: absolute;
+  top: 50%;
+  right: 13%;
+  transform: translateY(-50%);
+  font-size: clamp(0.6rem, 0.6rem + 6 * (100vw - 250px) / 325, 1.2rem);
+  color: var(--white);
+  letter-spacing: 1px;
+}
+.main__content-form-label {
+  margin-bottom: 0.4em;
+  display: block;
+  font-size: clamp(0.91rem, 0.9rem + 10.9 * (100vw - 250px) / 325, 2rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.main__content-form-input {
+  margin-bottom: 1em;
+  padding: 0.5em 0.8em;
+  width: 100%;
+  border: 1px solid var(--light-grayish-violet);
+  border-radius: 0.3em;
+  font-size: clamp(1.3rem, 1.3rem + 18 * (100vw - 250px) / 325, 3.1rem);
+}
+.main__content-form-input::-moz-placeholder {
+  color: var(--dark-grayish-violet);
+}
+.main__content-form-input::placeholder {
+  color: var(--dark-grayish-violet);
+}
+.main__content-form-input:focus {
+  outline: none;
+  border: 1px solid black;
+}
+.main__content-form-input-inputs {
+  display: flex;
+  -moz-column-gap: 0.5em;
+       column-gap: 0.5em;
+}
+.main__content-form-input-inputs-box--one {
+  width: 25%;
+}
+.main__content-form-input-inputs-box--two {
+  width: 25%;
+}
+.main__content-form-input-inputs-box--three {
+  width: 50%;
+}
+.main__content-form-input-inputs-box input {
+  margin-bottom: 0.2em;
+}
+.main__content-form-input-inputs-box-error {
+  visibility: hidden;
+  font-size: clamp(0.7rem, 0.7rem + 11 * (100vw - 250px) / 325, 1.8rem);
+  color: var(--red);
+}
+.main__content-form-btn {
+  margin-top: 0.5em;
+  background-color: var(--very-dark-violet);
+  color: var(--white);
+  width: 100%;
+  padding: 0.7em 0;
+  border-radius: 0.5em;
+  font-size: clamp(1.3rem, 1.3rem + 15 * (100vw - 250px) / 325, 2.8rem);
 }/*# sourceMappingURL=main.css.map */
