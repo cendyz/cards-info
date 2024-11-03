@@ -202,4 +202,29 @@ body {
   padding: 0.7em 0;
   border-radius: 0.5em;
   font-size: clamp(1.3rem, 1.3rem + 15 * (100vw - 250px) / 325, 2.8rem);
+}
+.main__content-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+.main__content-complete-img {
+  margin-bottom: 2.5em;
+  width: 25%;
+}
+.main__content-complete-thanks {
+  margin-bottom: 0.4em;
+  font-weight: 500;
+  font-size: 4rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--very-dark-violet);
+}
+.main__content-complete-info {
+  color: var(--dark-grayish-violet);
+  font-size: 2.6rem;
+}
+.main__content-complete-btn {
+  margin-top: 2.5em;
 }/*# sourceMappingURL=main.css.map */

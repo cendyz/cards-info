@@ -175,8 +175,43 @@ body {
 				font-size: clamp(1.3rem, calc(1.3rem + ((28 - 13) * ((100vw - 250px) / (575 - 250)))), 2.8rem);
 			}
 		}
+
+		&-complete {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			display: none;
+
+			&-img {
+				margin-bottom: 2.5em;
+				width: 25%;
+			}
+
+			&-thanks {
+				margin-bottom: 0.4em;
+				font-weight: 500;
+				font-size: 4rem; // min
+				letter-spacing: 5px;
+				text-transform: uppercase;
+				color: var(--very-dark-violet);
+			}
+
+			&-info {
+				color: var(--dark-grayish-violet);
+				font-size: 2.6rem; //min
+			}
+
+			&-btn {
+				margin-top: 2.5em;
+			}
+		}
 	}
 }
+// @media (min-width: 992px) {
+// 	.header {
+
+// 	}
+// }
 
 // - Family: [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
 // - Weights: 500
