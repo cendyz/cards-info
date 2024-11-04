@@ -170,7 +170,7 @@ body {
   letter-spacing: 1px;
 }
 .main__content-form-input {
-  margin-bottom: 1em;
+  margin-bottom: 0.2em;
   padding: 0.5em 0.8em;
   width: 100%;
   border: 1px solid var(--light-grayish-violet);
@@ -205,6 +205,7 @@ body {
   margin-bottom: 0.2em;
 }
 .main__content-form-input-inputs-box-error {
+  margin-bottom: 0.3em;
   visibility: hidden;
   font-size: clamp(0.7rem, 0.7rem + 11 * (100vw - 250px) / 325, 1.8rem);
   color: var(--red);
@@ -314,7 +315,6 @@ body {
     border: 1px solid var(--very-dark-violet);
   }
   .main__content-form-input-inputs-box-error {
-    margin-bottom: 0.3em;
     font-size: clamp(0.85rem, 0.85rem + 4.5 * (100vw - 992px) / 448, 1.3rem);
   }
   .main__content-form-btn {
