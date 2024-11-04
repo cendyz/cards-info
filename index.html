@@ -27,35 +27,36 @@
 							<div class="main__content-cards-one-parent-texts">
 								<p class="main__content-cards-one-parent-texts-numbers">0000 0000 0000 0000</p>
 								<p class="main__content-cards-one-parent-texts-name">Jane Appleseed</p>
-								<p class="main__content-cards-one-parent-texts-date">00/00</p>
+								<p class="main__content-cards-one-parent-texts-date"> <span class="month">00</span>/<span class="year">00</span></p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<form class="main__content-form">
-					<label for="" class="main__content-form-label">cardholder name</label>
-					<input type="text" class="main__content-form-input" placeholder="e.g. Jane Appleseed" />
+					<label for="name" class="main__content-form-label">cardholder name</label>
+					<input type="text" class="main__content-form-input" placeholder="e.g. Jane Appleseed" id="name" />
 					<p class="main__content-form-input-inputs-box-error">Can't be blank</p>
-					<label for="" class="main__content-form-label">card number</label>
+					<label for="number" class="main__content-form-label">card number</label>
 					<input type="text" class="main__content-form-input" placeholder="e.g. 1234 5678 9123 0000" id="number" />
 					<p class="main__content-form-input-inputs-box-error">Can't be blank</p>
 					<div class="main__content-form-input-inputs">
 						<div class="main__content-form-input-inputs-box main__content-form-input-inputs-box--one">
-							<label for="" class="main__content-form-label">exp. date </label>
-							<input type="text" class="main__content-form-input main__content-form-input-one" placeholder="MM" />
+							<label for="month" class="main__content-form-label">exp. date </label>
+							<input type="text" class="main__content-form-input main__content-form-input-one" placeholder="MM" id="month" />
 							<p class="main__content-form-input-inputs-box-error">Can't be blank</p>
 						</div>
 						<div class="main__content-form-input-inputs-box main__content-form-input-inputs-box--two">
-							<label for="" class="main__content-form-label">(mm/yy)</label>
-							<input type="text" class="main__content-form-input main__content-form-input-two" placeholder="YY" />
+							<label for="year" class="main__content-form-label">(mm/yy)</label>
+							<input type="text" class="main__content-form-input main__content-form-input-two" placeholder="YY" id="year" />
+							<p class="main__content-form-input-inputs-box-error"></p>
 						</div>
 						<div class="main__content-form-input-inputs-box main__content-form-input-inputs-box--three">
-							<label for="" class="main__content-form-label">cvc</label>
+							<label for="cvc" class="main__content-form-label">cvc</label>
 							<input
 								type="text"
 								class="main__content-form-input main__content-form-input-three"
-								placeholder="e.g. 123" />
-							<p class="main__content-form-input-inputs-box-error">Can't be blank</p>
+								placeholder="e.g. 123" id="cvc"/>
+							<p class="main__content-form-input-inputs-box-error" id="confirm-btn">Can't be blank</p>
 						</div>
 					</div>
 					<button class="main__content-form-btn">Confirm</button>
@@ -68,12 +69,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- let value = cardNumberInput.value.replace(/[^0-9]/g, "");
-	if (value.length > 16) value = value.slice(0, 16);
-	cardNumberInput.value = value.replace(/(\d{4})(?=\d)/g, "$1 ");
-	value = value.padEnd(16, '0');
-	cardNumbers.textContent = value.replace(/(\d{4})(?=\d)/g, "$1 "); -->
 
 		<script defer src="./src/main.js"></script>
 	</body>
