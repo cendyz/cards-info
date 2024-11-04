@@ -51,38 +51,51 @@ body {
 			}
 
 			&-one {
-				padding: 5%;
 				position: absolute;
 				top: 56.5%;
 				flex-direction: column;
 				justify-content: space-between;
 				height: 40vw;
 				max-height: 14.375em;
-				background-image: url("../../src/images/bg-card-front.png");
-				background-size: cover;
 
-				&-logo {
-					width: 20%;
-				}
+				&-parent {
+					position: relative;
 
-				&-texts {
-					display: flex;
-					flex-wrap: wrap;
-					justify-content: space-between;
-					color: var(--white);
-
-					&-numbers {
+					&-img {
 						width: 100%;
-						margin-bottom: 0.7em;
-						font-size: clamp(1.13rem, calc(1.13rem + ((30.15 - 11.3) * ((100vw - 250px) / (575 - 250)))), 3.15rem);
-						letter-spacing: 1px;
 					}
 
-					&-name,
-					&-date {
-						text-transform: uppercase;
-						font-size: clamp(0.7rem, calc(0.7rem + ((15 - 7) * ((100vw - 250px) / (575 - 250)))), 1.5rem);
-						color: var(--light-grayish-violet);
+					&-logo {
+						position: absolute;
+						top: 10%;
+						left: 5%;
+						width: 20%;
+					}
+
+					&-texts {
+						position: absolute;
+						bottom: 10%;
+						left: 5%;
+						right: 5%;
+						width: fit-content;
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-between;
+						color: var(--white);
+
+						&-numbers {
+							width: 100%;
+							margin-bottom: 0.7em;
+							font-size: clamp(1.13rem, calc(1.13rem + ((30.15 - 11.3) * ((100vw - 250px) / (575 - 250)))), 3.15rem);
+							letter-spacing: 1px;
+						}
+
+						&-name,
+						&-date {
+							text-transform: uppercase;
+							font-size: clamp(0.7rem, calc(0.7rem + ((15 - 7) * ((100vw - 250px) / (575 - 250)))), 1.5rem);
+							color: var(--light-grayish-violet);
+						}
 					}
 				}
 			}
