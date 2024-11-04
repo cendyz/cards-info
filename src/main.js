@@ -16,12 +16,26 @@ const date = new Date();
 const currentYear = date.getFullYear();
 
 const checkBlankInput = input => {
-	if (input.value === "") {
+	if (input.value.length === 0 || input.value == "0" || input.value == "00") {
 		input.style.border = "1px solid hsl(0, 100%, 66%)";
 		input.nextElementSibling.style.visibility = "visible";
+
+		if (yearInput.value.length == 0 && monthInput.value.length != 0) {
+			monthInput.nextElementSibling.style.visibility = "visible";
+		}
+
+		if (monthInput.value.length == 0 || monthInput.value.length == "0" || monthInput.value == "00") {
+			monthInput.style.border = "1px solid hsl(0, 100%, 66%)";
+			monthInput.nextElementSibling.style.visibility = "visible";
+		}
 	} else {
 		input.style.border = "1px solid hsl(270, 3%, 87%)";
 		input.nextElementSibling.style.visibility = "hidden";
+		checkMinCvc();
+
+		if (yearInput.value.length != 0) {
+			checkMaxYear();
+		}
 	}
 };
 
@@ -58,44 +72,50 @@ const checkMaxMonth = () => {
 	}
 };
 
-const validateYearInput = () => {
-	const yearString = currentYear.toString().slice(-2)
-	const yearNum = parseFloat(yearString)
-	if(yearInput.value > yearNum + 15) {
-		yearInput.style.border = "1px solid hsl(0, 100%, 66%)";
-		monthInput.nextElementSibling.style.visibility = 'visible'
-	} else {
-		yearInput.style.border = "1px solid hsl(270, 3%, 87%)";
-		monthInput.nextElementSibling.style.visibility = "hidden";
-	}
-}
+const checkMaxYear = () => {
+	const stringYear = currentYear.toString().slice(-2);
+	const numYear = parseFloat(stringYear);
+	const yearNumInput = parseFloat(yearInput.value);
+	let maxYear = numYear + 10;
 
-validateYearInput()
+	if ((yearInput.value.length != 0 && yearNumInput < numYear) || yearNumInput > maxYear) {
+		yearInput.style.border = "1px solid hsl(0, 100%, 66%)";
+		monthInput.nextElementSibling.textContent = "Wrong year.";
+		monthInput.nextElementSibling.style.visibility = "visible";
+	} else {
+		monthInput.nextElementSibling.textContent = "Can't be blank";
+		monthInput.nextElementSibling.style.visibility = "hidden";
+
+		if (monthInput.value.length == 0) {
+			monthInput.nextElementSibling.style.visibility = "visible";
+		}
+	}
+};
 
 const checkCvc = () => {
 	let value = cvcInput.value.replace(/[^0-9]/g, "");
 	if (value.length > 3) value = value.slice(0, 3);
 	cvcInput.value = value;
 	cvcText.textContent = value;
-	if (cvcInput.value === '') cvcText.textContent = '000'
+	if (cvcInput.value === "") cvcText.textContent = "000";
+};
+
+const checkMinCvc = () => {
+	if (cvcInput.value.length < 3) {
+		cvcInput.style.border = "1px solid hsl(0, 100%, 66%)";
+		cvcInput.nextElementSibling.textContent = "CVC is incorrect.";
+		cvcInput.nextElementSibling.style.visibility = "visible";
+	} else {
+		cvcInput.style.border = "1px solid hsl(270, 3%, 87%)";
+		cvcInput.nextElementSibling.textContent = "Can't be blank.";
+		cvcInput.nextElementSibling.style.visibility = "hidden";
+	}
 };
 
 const showSendDisplay = () => {
 	form.style.display = "none";
 	completeForm.style.display = "flex";
 };
-
-form.addEventListener("submit", event => {
-	event.preventDefault();
-	
-	allInputs.forEach(input => {
-		checkBlankInput(input);
-
-		
-	});
-
-	
-});
 
 cardNumberInput.addEventListener("input", () => {
 	checkCardNumber();
@@ -112,11 +132,18 @@ monthInput.addEventListener("input", () => {
 
 yearInput.addEventListener("input", () => {
 	checkMonthYearInput(yearInput, yearText);
-	
 });
 
 cvcInput.addEventListener("input", () => {
 	checkCvc();
+});
+
+form.addEventListener("submit", event => {
+	event.preventDefault();
+
+	allInputs.forEach(input => {
+		checkBlankInput(input);
+	});
 });
 
 window.onload = () => {
